@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarab Restaurant</title>
+    <link rel="icon" href="img/logo.png" type="img/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+  --primary: #e8281a;
+  --secondary: #ff7a00;
+  --dark: #000;
+  --cream:#FFF8F0;
+  
+}
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--cream);
+      }
+      .nav-header {
+        background: #111111;
+        color: white;
+        padding: 6px;
+        font-size: 0.82rem;
+
+      }
+      .buttons-gap{
+        gap: 50px;
+        display: flex;
+      }
+      .nav-buttons {
+        font-size: 13px;
+        /* padding: 3px; */
+        width: 170px;
+        border-radius: 20px;
+        color: white;
+        background: #e8281a;
+      }
+      .social-buttons i{
+        width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    display: inline-flex;
+    transition: 0.5s ease;
+    }
+      .social-buttons a:hover i{
+        background-color: #e8281a;
+        color:white;
+    }
+
+    nav{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+        background: white;
+    }
+    
+    .res-name{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .res-logo{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color:#fff;
+        box-shadow: 0px 4px 15px rgba(232, 40, 26, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .res-logo i{
+        font-size: 22px;
+    }
+    .res-text{
+        display: flex;
+        flex-direction: column;
+    }
+    .sarab{
+        font-family: "Playfair display",serif;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--dark);
+    }
+    .sarab span{
+        color: var(--primary);
+    }
+    .des{
+        text-transform: uppercase;
+        font-size: 0.62rem;
+        letter-spacing: 1.5px;
+    }
+    .navbar-collapse{
+        flex-grow: 1;
+        align-items: center;
+    }
+    .mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.nav-item li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav .nav-link{
+    color: #333;
+    font-size: 0.87rem;
+    font-weight: 500;
+}
+.navbar-nav .nav-link:hover {
+    color: #e8281a;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.nav-link::after{
+    content: "";
+    position: absolute;
+    left:50%;
+    width: 0;
+    bottom: 0;
+    top: 60px;
+    height: 3px;
+    transform: translateX(-50%);
+    background-color: #e8281a;
+    transition: all 0.3s ease;
+}
+.nav-link:hover::after{
+    width: 100%;
+}
+#sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 92vh;
+    background: #FFF8F0;
+    overflow: hidden;
+}
+
+.badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 6px 16px 6px 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 22px;
+    margin-top: 70px;
+    
+}
+.badge span{
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+.badge .star{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.78rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+.title{
+    font-size: 4.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+.title span{
+    color: var(--primary);
+}
+.title h1{
+    position: relative;
+    display: inline-block;
+    
+}
+.highlight{
+    position: relative;
+    z-index: 1;
+}
+.highlight::before{
+      content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    z-index: -1;
+}
+h1, h2, h3, h4 , h5{
+    font-family: "Playfair Display",serif;
+}
+.hdes{
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 470px;
+    margin-bottom: 30px;
+}
+.btn-red{
+    background: linear-gradient(135deg, var(--primary), #c01e12);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 25px 20px;
+    font-weight: 600;
+    font-size: 0.93rem;
+    box-shadow: 0 8px 24px rgba(232, 40, 26, 0.35);
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    font-family: "Poppins",sans-serif;
+    text-decoration: none;
+        white-space: nowrap;
+
+}
+.btn-play{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn-play:hover{
+    color: var(--primary);
+}
+    
+.btn-play .watch{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    color: var(--primary);
+    font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+.watch:hover{
+    color: white;
+    background: var(--primary);
+}
+.watch span:hover{
+    color: var(--primary);
+}
+.burger{
+    border-radius: 50%;
+    width: 480px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 40% 40%, #fff8f0, #ffe5c8);
+    box-shadow: 0 28px 76px rgba(232, 40, 26, 0.14);
+}
+.burger img{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.stats .num{
+    font-family: "Playfair Display", serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--dark);
+    display: block;
+    line-height: 1;
+}
+.stats .small{
+    font-size: 0.7rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.divide{
+    width: 2px;
+    height: 40px;
+    background: #ddd;
+    align-self: center;
+}
+.deal-card{
+    background: #fff;
+    border-radius: 18px;
+    width: 170px;
+    position: absolute;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.c1{
+    top: 60px;
+    left: -20px;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+.c2{
+    bottom: 170px;
+    right: 10px;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+.c3{
+    bottom:60px;
+    right:20px;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+@keyframes floatUpDown{
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px)
+    }
+}
+.hot-deal{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+.hc1{
+    background: rgba(232, 40, 26, 0.11);
+    color: var(--primary);
+}
+.hc2{
+    background: rgba(45, 106, 79, 0.11);
+    color: var(--green);
+}
+.hc3{
+    background: rgba(246, 166, 35, 0.14);
+    color: var(--secondary);
+}
+
+.name{
+        font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--dark);
+    display: block;
+    line-height: 1;
+}
+.amount{
+        font-size: 0.66rem;
+    color: #999;
+}
+.menu-section{
+    background: var(--primary);
+    padding: 13px 0;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 100px;
+}
+.menu-track{
+    display: flex;
+    gap: 38px;
+    white-space: nowrap;
+    animation: run 22s linear infinite;
+    overflow: visible;
+}
+@keyframes run{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+.menu-item{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 0.86rem;
+    font-weight: 500;
+    font-family: "Poppins",sans-serif;
+
+}
+.menu-item i{
+    font-size: 0.65rem;
+}
+.offer{
+    font-family: "Dancing Script", cursive;
+    font-size: 1.35rem;
+    color: var(--primary);
+    display: block;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+}
+.cat-des{
+    color: #777;
+    line-height: 1.8;
+    font-size: 0.93rem;
+
+}
+.cat-offer{
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+.cat-offer span{
+    color: var(--primary);
+}
+.cat-line{
+    width: 58px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    margin: 0 auto 12px;
+}
+.catcard{
+    border-radius: 15px;
+    padding: 22px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 2px solid transparent;
+    max-width: 100%;
+    background: #fff;
+}
+
+.catcard:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 38px rgba(232, 40, 26, 0.14);
+    border-color: var(--primary);
+}
+.catimg{
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px;
+    display: block;
+    transition: 0.4s;
+}
+.catnm{
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 3px;
+}
+.catele{
+    font-size: 0.73rem;
+    color: #bbb;
+}
+.story{
+    font-family: "Dancing Script", cursive;
+    font-size: 1.35rem;
+    color: var(--primary);
+    display: block;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+    margin-top: 100px;
+}
+.exp{
+    position: relative;
+}
+.exp1{
+    position: absolute;
+    border-radius: 20px;
+    padding: 20px 12px;
+    background: var(--primary);
+    top:28px;
+    left: -16px;
+    color: #fff;
+    text-align: center;
+}
+.exp2{
+    font-family: "Playfair Display",serif;
+    font-size: 2.3rem;
+    margin-left: 10%;
+}
+@media (min-width: 992px) {
+    .col-lg-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    @media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+    }
+}
+}
+
+    </style>
+  </head>
+  <body>
+    <div>
+<div class="nav-header d-flex justify-content-between align-items-center px-5">       
+     <div class="d-flex ms-5 gap-3">
+          <div>
+            <i class="bi bi-telephone-fill me-2" style="color: orange"></i>
+            +1 (800) 123-4567
+          </div>
+          <div>
+            <i class="bi bi-envelope-fill me-2" style="color: orange"></i>
+            hello@sarabfood.com
+          </div>
+          <div>
+            <i class="bi bi-geo-alt-fill me-2" style="color: orange"></i>
+            42 Flavor Street, NY
+          </div>
+        </div>
+        <div class="d-flex gap-3">
+<div class="d-flex align-items-center gap-3 me-5">          <div>
+            <button class="nav-buttons"><i class="bi bi-fire">  Free delivery Today</i></button>
+          </div>
+          
+          <div class="social-buttons d-flex gap-3">
+            <a href="https://www.facebook.com/">
+            <i class="bi bi-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/">
+            <i class="bi bi-instagram"></i>
+            </a>
+
+            <a href="https://www.youtube.com/">
+            <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+          </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg p-4" id="nav">
+        <div class="container ms-5">
+            <div class="res-name">
+                <div class="res-logo">
+                     <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="res-text">
+                    <div class="sarab">
+                        Sar<span>ab</span>
+                    </div>
+                    <div class="des text-secondary">fast food & Restaurant</div>
+                    </div>
+            </div>
+        
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <i class="fas fa-bars" style="color: var(--primary); font-size: 1.35rem;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Menu</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Chefs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <section id="sec">
+        <div class="container">
+        <div class="row align-items-center g-5 " style="min-height:88vh">
+            <div class="col-lg-6">
+                <div class="badge">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>#1 Rated Fast Food Restaurant in New York</span>
+                </div>
+                <h1 class="title">Delicious <br>
+                    <span class="highlight">
+                        
+                        Fast Food</span>
+                    <br>
+                    for Every Moment
+                </h1>
+                <p class="hdes">
+                    Experience bold flavors crafted from premium ingredients.
+                     From crispy burgers to gourmet pizzas -
+                     every bite is an adventure worth savoring.
+                </p>
+                <div class="d-flex align-items-center gap-3 mb-2">
+                    <a href="#" class="btn-red">
+                        <i class="fas fa-utensils"></i>
+                        Explore menu
+                    </a>
+
+                    <a href="#" class="magnific_popup btn-play popup-youtube">
+                        <div class="watch">
+                        <i class="fas fa-play"></i>
+                         
+                        </div>
+                        <span>Watch our story</span>
+                </a>
+            </div>
+            <div class="elements d-flex gap-3 flex-wrap mt-4">
+                <div class="stats">
+                    <span class="num">850+</span>
+                    <small>Happy Customers</small>
+                </div>
+                <div class="divide"></div>
+
+                <div class="stats">
+                    <span class="num">120+</span>
+                    <small>Menu Items</small>
+                </div>
+                <div class="divide"></div>
+
+                <div class="stats">
+                    <span class="num">15+</span>
+                    <small>Expert Chefs</small>
+                </div>
+                <div class="divide"></div>
+
+                <div class="stats">
+                    <span class="num">12yr</span>
+                    <small>Experience</small>
+                </div>
+                <div class="divide"></div>
+            </div>
+        </div>
+        
+
+        <div class="col-lg-6">
+            <div style="position: relative; text-align: center;">
+                <div class="burger">
+                    <img src="img/category/1.jpg" alt="image">
+                </div>
+                <div class="deal-card c1">
+                    <div class="hot-deal hc1">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div>
+                        <span class="name">Hot Deal</span>
+                        <span class="amount">30% off today</span>
+                    </div>
+                </div>
+
+                
+                
+                <div class="deal-card c2">
+                    <div class="hot-deal hc2">
+                        <i class="fas fa-clock" style="color:green"></i>
+                    </div>
+                    <div>
+                        <span class="name">20 min</span>
+                        <span class="amount">Fast delivery</span>
+                    </div>
+                </div>
+
+                <div class="deal-card c3">
+                    <div class="hot-deal hc3">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <span class="name">4.9/5</span>
+                        <span class="amount">2k+ reviews</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         </section>
+
+
+        <div class="container-fluid">
+        <div class="menu-section">
+            <div class="menu-track">
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Crispy fried chicken</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Gourment Burgers</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Artisan pizzas</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Fresh wraps and rolls</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Loaded fries</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Icecream shakes</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Grilled Sandwiches</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Crispy fried chicken</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Gourment Burgers</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Artisan pizzas</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Fresh wraps and rolls</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Loaded fries</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Icecream shakes</span>
+                </div>
+
+                <div class="menu-item">
+                    <i class="fas fa-circle">
+                    </i>
+                    <span>Grilled Sandwiches</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="category">
+            <div class="container">
+                <div class="text-center mb-5 mt-5 aos-init aos-animate" data-aos="fade-up">
+                    <span class="offer">What we offer</span>
+                        <h2 class="cat-offer">
+                            Browse By
+                            <span>Category</span>
+                        </h2>
+                        <div class="cat-line"></div>
+
+                        <p class="cat-des mx-auto" style="max-width: 480px;">
+                            From sizzling burgers to exotic world cuisines - find your favourite in our menu
+                        </p>
+                </div>
+
+                <div class="row justify-content-center" style="color: var(--cream);">
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="catcard">
+                            <img class="catimg" src="img/category/1.jpg" alt="burger">
+                            <div class="catnm">All Items</div>
+                            <div class="catele">99 items</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="catcard">
+                            <img class="catimg" src="img/category/1.jpg" alt="burger">
+                            <div class="catnm">Burgers</div>
+                            <div class="catele">24 items</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="catcard">
+                            <img class="catimg" src="img/category/3.jpg" alt="burger">
+                            <div class="catnm">Pizza</div>
+                            <div class="catele">18 items</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="catcard">
+                            <img class="catimg" src="img/category/4.jpg" alt="burger">
+                            <div class="catnm">Fried Chicken</div>
+                            <div class="catele">15 items</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="catcard">
+                            <img class="catimg" src="img/category/5.jpg" alt="burger">
+                            <div class="catnm">Wraps</div>
+                            <div class="catele">12 items</div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="70">
+                        <div class="catcard">
+                            <img class="catimg" src="img/category/6.jpg" alt="burger">
+                            <div class="catnm">Desserts</div>
+                            <div class="catele">20 items</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+</div>  
+        </div>
+         
+    
+   
+    <!-- <ul class="nav-style">
+        <li class="item-link">+1 (800) 123-4567</li>
+        <li class="item-link">hello@sarabfood.com</li>
+
+        <li class="item-link">42 Flavor Street, NY</li>
+
+    </ul> -->
+
+    <!-- <div class="bg-dark p-2">
+    <i class="bi bi-telephone-fill me-2 ms-5" style="color: orange;"></i>
+    <span class="text-white">+1 (800) 123-4567</span>
+
+    <i class="bi bi-envelope-fill me-2 ms-4" style="color: orange;"></i>
+    <span class="text-white">hello@sarabfood.com</span>
+  
+
+   <i class="bi bi-geo-alt-fill me-2 ms-4" style="color: orange;"></i>
+    <span class="text-white">42 Flavor Street, NY</span>
+
+    <div class="b-1">
+    <button class="rounded-pill p-1 bg-danger" style="width: 200px;">Free delivery</button>
+    
+    <a href="icon-link icon-link-hover" href="https://www.facebook.com/"></a>
+    <i class="bi bi-facebook"></i>
+    </div>
+
+   
+    </div> -->
+  </body>
+</html>
