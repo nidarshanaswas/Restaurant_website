@@ -15,8 +15,33 @@
         color: white;
         padding: 6px;
         font-size: 0.82rem;
-
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-top {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+.header-top div{
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header-bottom {
+  display: flex;
+  gap: 20px;
+}
       .buttons-gap{
         gap: 50px;
         display: flex;
@@ -55,7 +80,8 @@
     
     .res-name{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: center;
         gap: 10px;
     }
     .res-logo{
@@ -265,15 +291,22 @@ h1, h2, h3, h4 , h5{
 .watch span:hover{
     color: var(--primary);
 }
+.col-lg-6:last-child > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .burger{
     border-radius: 50%;
-    width: 480px;
-    height: 480px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle at 40% 40%, #fff8f0, #ffe5c8);
     box-shadow: 0 28px 76px rgba(232, 40, 26, 0.14);
+    margin: 0 auto;
 }
 .burger img{
     width: 90%;
@@ -304,7 +337,7 @@ h1, h2, h3, h4 , h5{
 .deal-card{
     background: #fff;
     border-radius: 18px;
-    width: 170px;
+    width: auto;
     position: absolute;
     padding: 25px;
     display: flex;
@@ -361,17 +394,27 @@ h1, h2, h3, h4 , h5{
     background: rgba(246, 166, 35, 0.14);
     color: var(--secondary);
 }
-
-.name{
-        font-weight: 700;
-    font-size: 0.92rem;
-    color: var(--dark);
-    display: block;
-    line-height: 1;
+.deal-card div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+   
 }
-.amount{
-        font-size: 0.66rem;
-    color: #999;
+
+.name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1;
+    display: block;
+}
+
+.amount {
+    font-size: 0.7rem;
+    color: #aaa;
+    margin: 0;
+    line-height: 1;
+    display: block;
 }
 .menu-section{
     background: var(--primary);
@@ -445,6 +488,12 @@ h1, h2, h3, h4 , h5{
     border-radius: 4px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     margin: 0 0 12px;
+}
+.card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 .catcard{
     border-radius: 15px;
@@ -816,13 +865,50 @@ text-transform: capitalize;
         max-width: 1140px;
     }
 }
+@media (max-width: 768px) {
 
-@media (max-width: 1280px) and (min-width: 992px) {
-
-  #nav .container {
-    margin-left: 30px !important;
-    margin-right: 30px !important;
+  .nav-header {
+    display: flex;
+    flex-direction: column;   /* 2 rows */
+    align-items: flex-start;
+    padding: 8px 12px;
+    gap: 6px;
   }
+
+  /* FIRST ROW (phone + email) */
+  .nav-header .header-top {
+    display: flex;
+    flex-direction: column;   /* 👈 force 2 lines */
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+  }
+
+  /* SECOND ROW (button + socials) */
+  .nav-header .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttons-gap {
+    gap: 8px;
+  }
+
+  .nav-buttons {
+    width: auto;
+    font-size: 11px;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
+
+  .social-buttons {
+    display: flex !important;
+    gap: 6px;
+  }
+}
+@media (max-width: 1280px) and (min-width: 992px) {
 
   .navbar-nav .nav-link {
     font-size: 0.82rem;
@@ -832,6 +918,7 @@ text-transform: capitalize;
   .res-logo {
     width: 42px;
     height: 42px;
+    margin: 0;
   }
 
   .sarab {
@@ -842,10 +929,6 @@ text-transform: capitalize;
 
 @media (max-width: 420px) {
 
-  #nav .container {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-  }
 
   .navbar {
     padding: 12px !important;
@@ -898,5 +981,137 @@ text-transform: capitalize;
   }
 }
 
+@media (max-width: 768px) {
+  .burger {
+    width: 240px;
+    height: 240px;
+  }
 
+  .deal-card {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger {
+    width: 240px;
+    height: 240px;
+  }
+
+  .deal-card {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .sec-image {
+    bottom: -23px;
+    left: 30px;
+    width: 140px;
+    height: 150px;
+  }
+} 
+   
+@media (max-width:400px){
+.catcard{
+    border-radius: 15px;
+    padding: 22px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 2px solid transparent;
+    max-width: 100%;
+    background: #fff;
+    
+}
+
+.catcard:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 38px rgba(232, 40, 26, 0.14);
+    border-color: var(--primary);
+}
+.catimg{
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px;
+    display: block;
+    transition: 0.4s;
+}
+.catnm{
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 3px;
+}
+.catele{
+    font-size: 0.73rem;
+    color: #bbb;
+}
+}
+@media (max-width:400px){
+    .sec-image{
+    position: absolute;
+    border: 5px solid #fff;
+    bottom: -23px;
+    left: 30px;
+    width: 170px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+}
+}
+
+@media (max-width: 768px) {
+
+  .nav-header .ms-5 {
+    margin-left: 8% !important;
+  }
+
+  .nav-header .me-5 {
+    margin-right: 0 !important;
+  }
+
+  .nav-header {
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .header-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  
+  .location{
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+
+  .navbar .container {
+    margin-left: 0 !important;   
+
+  .navbar-nav {
+    margin-left: 0 !important;  
+    text-align: left !important; 
+  }
+
+  .navbar-nav .nav-item {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .burger{
+    width: 240px;
+    height: 240px;
+  }
+
+
+}
+ 
+  }
 }
